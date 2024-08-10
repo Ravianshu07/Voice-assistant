@@ -4,11 +4,10 @@ import wikipedia
 import webbrowser
 import os
 
-# init pyttsx
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty("voices")
 
-engine.setProperty('voice', voices[1].id)  # 1 for female and 0 for male voice
+engine.setProperty('voice', voices[1].id)  
 
 
 def speak(audio):
@@ -35,7 +34,7 @@ def take_command():
 
 if __name__ == '__main__':
 
-    speak("Amigo assistance activated ")
+    speak("Siri assistance activated ")
     speak("How can i help you")
     while True:
         query = take_command().lower()
@@ -46,7 +45,7 @@ if __name__ == '__main__':
             speak("According to wikipedia")
             speak(results)
         elif 'are you' in query:
-            speak("I am amigo developed by Jaspreet Singh")
+            speak("I am Siri ")
         elif 'open youtube' in query:
             speak("opening youtube")
             webbrowser.open("youtube.com")
@@ -64,7 +63,7 @@ if __name__ == '__main__':
             webbrowser.open("spotify.com")
         elif 'open whatsapp' in query:
             speak("opening whatsapp")
-            loc = "C:\\Users\\jaspr\\AppData\\Local\\WhatsApp\\WhatsApp.exe"
+            loc = "C:\\Users\\PC\\AppData\\Local\\WhatsApp\\WhatsApp.exe"
             os.startfile(loc)
         elif 'play music' in query:
             speak("opening music")
